@@ -7,3 +7,12 @@
   list-style-type: none;
   padding: 0;
 }
+
+.link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.active {
+  color: #8144d6;
+}
