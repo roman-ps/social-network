@@ -10,3 +10,7 @@
   'h h'
   'n c';
 }
+
+.wrapper {
+  grid-area: c;
+}
