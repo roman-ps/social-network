@@ -1,15 +1,15 @@
 import React from 'react';
 import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 import classes from './Profile.module.css';
 
-const ProfileInfo = () => {
-  return (
-    <div className={classes.profileInfo}>
-      <img src='https://images.unsplash.com/photo-1626281833458-1308b278849b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80' alt='React Infinity' width='100%' height='100px'></img>
-      Ava + Description
-    </div>
-  )
-};
+const postsData = [
+  { id: 1, post: 'Lets go', likes: 4 },
+  { id: 2, post: 'Just go', likes: 22 },
+  { id: 3, post: 'Another go', likes: 345 },
+  { id: 4, post: 'Red go-go', likes: 11 },
+  { id: 5, post: 'Wonderful go', likes: 9 },
+];
 
 const Profile = () => {
   return (
