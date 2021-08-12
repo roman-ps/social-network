@@ -11,15 +11,18 @@ import Settings from './components/Settings/Settings';
 
 import classes from './App.module.css';
 
-const App = () => {
+const App = (props) => {
+  console.log('props: ', props)
+  console.log('props.data: ', props.data)
+  console.log('props.data.postsData: ', props.data.postsData)
   return (
     <BrowserRouter>
       <div className={classes.main}>
         <Header />
         <Navbar />
         <div className={classes.wrapper}>
-          <Route path='/profile' component={Profile} />
-          <Route path='/dialogs' component={Dialogs} />
+          <Route path='/profile' render={() => <Profile data={props.data.postsData}/>} />
+          <Route path='/dialogs' render={() => <Dialogs data={props.data.dialogsData}/>} />
           <Route path='/news' component={News} />
           <Route path='/music' component={Music} />
           <Route path='/settings' component={Settings} />

@@ -10,11 +10,16 @@ const postsData = [
   { id: 5, post: 'Wonderful go', likes: 9 },
 ];
 
-const postsElements = postsData.map((elem) => {
-  return <Post text={elem.post} likes={elem.likes} />
-})
+// const postsElements = postsData.map((elem) => {
+//   return <Post text={elem.post} likes={elem.likes} />
+// });
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+
+  const postsElements = props.data.map((elem, index) => {
+    return <Post key={index} text={elem.post} likes={elem.likes} />
+  });
+
   return (
     <div className={classes.posts}>
       <h2>My posts</h2>
