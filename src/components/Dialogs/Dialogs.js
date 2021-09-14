@@ -7,10 +7,17 @@ const Dialogs = (props) => {
   const messagesElements = props.messages.map((elem, index) => {
     return <Message key={index} text={elem.message} />
   })
-  
+
   const dialogsElements = props.dialogs.map((elem, index) => {
     return <User key={index} name={elem.name} id={elem.id} />
   })
+
+  let newDialog = React.createRef();
+
+  const addDialog = () => {
+    const value = newDialog.current.value;
+    console.log(value);
+  }
 
   return (
     <div className={classes.dialogs}>
@@ -19,6 +26,11 @@ const Dialogs = (props) => {
       </div>
       <div className={classes.messages}>
         {messagesElements}
+      </div>
+      <div>
+        <textarea ref={newDialog} placeholder='Напишите что-нибудь'></textarea>
+        <br />
+        <button onClick={addDialog} type='button'>Добавить</button>
       </div>
     </div>
   )
