@@ -4,6 +4,7 @@ import Message from './Message/Message';
 import classes from './Dialogs.module.css';
 
 const Dialogs = (props) => {
+  console.log(props)
   const messagesElements = props.messages.map((elem, index) => {
     return <Message key={index} text={elem.message} />
   })
@@ -14,9 +15,9 @@ const Dialogs = (props) => {
 
   let newDialog = React.createRef();
 
-  const addDialog = () => {
-    const value = newDialog.current.value;
-    console.log(value);
+  let addMessages = () => {
+    const text = newDialog.current.value;
+    props.addMessages(text);
   }
 
   return (
@@ -30,7 +31,8 @@ const Dialogs = (props) => {
       <div>
         <textarea ref={newDialog} placeholder='Напишите что-нибудь'></textarea>
         <br />
-        <button onClick={addDialog} type='button'>Добавить</button>
+
+        <button onClick={addMessages} type='button'>Добавить</button>
       </div>
     </div>
   )

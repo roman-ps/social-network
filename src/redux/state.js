@@ -22,4 +22,14 @@ const DATA = {
   ],
 };
 
+const addMessages = (text) => {
+  let newMessage = {
+    id: 6,
+    message: text,
+  }
+  DATA.messages.push(newMessage);
+  console.log(DATA.messages)
+};
+
 export default DATA;
+export {addMessages};
