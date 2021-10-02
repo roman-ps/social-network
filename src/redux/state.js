@@ -1,3 +1,5 @@
+import renderData from "../render";
+
 const DATA = {
   posts: [
     { id: 1, post: 'Lets go', likes: 4 },
@@ -29,6 +31,7 @@ const addMessages = (text) => {
   }
   DATA.messages.push(newMessage);
   console.log(DATA.messages)
+  renderData();
 };
 
 export default DATA;
