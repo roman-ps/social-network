@@ -24,9 +24,13 @@ const DATA = {
   ],
 };
 
+const getNextId = () => {
+  return DATA.messages.length + 1;
+};
+
 const addMessages = (text) => {
   let newMessage = {
-    id: 6,
+    id: getNextId(),
     message: text,
   }
   DATA.messages.push(newMessage);
