@@ -2,6 +2,7 @@ import React from 'react';
 import User from './User/User';
 import Message from './Message/Message';
 import classes from './Dialogs.module.css';
+import DATA from '../../redux/state';
 
 const Dialogs = (props) => {
   console.log(props)
@@ -18,7 +19,12 @@ const Dialogs = (props) => {
   let addMessages = () => {
     const text = newDialog.current.value;
     props.addMessages(text);
-    newDialog.current.value = '';
+    props.updatePostText('');
+  }
+
+  let onPostChange = () => {
+    let newText = newDialog.current.value;
+    props.updatePostText(newText);
   }
 
   return (
@@ -30,7 +36,7 @@ const Dialogs = (props) => {
         {messagesElements}
       </div>
       <div>
-        <textarea ref={newDialog} placeholder='Напишите что-нибудь'></textarea>
+        <textarea onChange={onPostChange} ref={newDialog} placeholder='Напишите что-нибудь'></textarea>
         <br />
 
         <button onClick={addMessages} type='button'>Добавить</button>

@@ -22,6 +22,7 @@ const DATA = {
     { id: 4, message: 'Go to the ocean' },
     { id: 5, message: 'Beautiful wood' },
   ],
+  newPost: '',
 };
 
 const getNextId = () => {
@@ -34,9 +35,14 @@ const addMessages = (text) => {
     message: text,
   }
   DATA.messages.push(newMessage);
-  console.log(DATA.messages)
   renderData();
+  DATA.newPost = '';
 };
 
+let updatePostText = (newText) => {
+  DATA.newPost = newText;
+  renderData();
+}
+
 export default DATA;
-export {addMessages};
+export {addMessages, updatePostText};
