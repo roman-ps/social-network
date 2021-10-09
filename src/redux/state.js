@@ -36,7 +36,7 @@ const addMessages = () => {
   }
   DATA.messages.push(newMessage);
   renderData();
-  DATA.newPost = '';
+  updatePostText('');
 };
 
 let updatePostText = (newText) => {

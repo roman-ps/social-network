@@ -17,7 +17,6 @@ const Dialogs = (props) => {
 
   const addMessages = () => {
     props.addMessages();
-    props.updatePostText('');
   }
 
   const onPostChange = () => {
