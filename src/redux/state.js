@@ -29,10 +29,10 @@ const getNextId = () => {
   return DATA.messages.length + 1;
 };
 
-const addMessages = (text) => {
+const addMessages = () => {
   let newMessage = {
     id: getNextId(),
-    message: text,
+    message: DATA.newPost,
   }
   DATA.messages.push(newMessage);
   renderData();

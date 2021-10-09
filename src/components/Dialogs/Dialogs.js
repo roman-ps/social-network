@@ -2,7 +2,6 @@ import React from 'react';
 import User from './User/User';
 import Message from './Message/Message';
 import classes from './Dialogs.module.css';
-import DATA from '../../redux/state';
 
 const Dialogs = (props) => {
   console.log(props)
@@ -16,13 +15,12 @@ const Dialogs = (props) => {
 
   let newDialog = React.createRef();
 
-  let addMessages = () => {
-    const text = newDialog.current.value;
-    props.addMessages(text);
+  const addMessages = () => {
+    props.addMessages();
     props.updatePostText('');
   }
 
-  let onPostChange = () => {
+  const onPostChange = () => {
     let newText = newDialog.current.value;
     props.updatePostText(newText);
   }
